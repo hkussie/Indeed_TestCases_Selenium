@@ -11,7 +11,6 @@ class LinksTest(unittest.TestCase):
 		driver = self.driver 
 		driver.get("https://www.youtube.com")
 		
-
 	def closeBrowser(self):
 		time.sleep(5)
 		self.driver.close()	 

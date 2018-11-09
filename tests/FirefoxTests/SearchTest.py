@@ -1,13 +1,13 @@
-import time
+import time 
 import unittest 
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys 
+from selenium import webdriver 
+from selenium.webdriver.common.keys import Keys
 
 class ChromeBrowserTest(unittest.TestCase):
 
 	# Open the browser 
 	def setUp(self):
-		self.driver = webdriver.Chrome("/Users/harrisonk1/Downloads/chromedriver")
+		self.driver = webdriver.Firefox()
 
 	def testJobSearch(self):
 		driver = self.driver
