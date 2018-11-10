@@ -14,6 +14,7 @@ class ChromeBrowserTest(unittest.TestCase):
 		driver.get("https://www.indeed.com/")
 		driver.delete_all_cookies()
 		elem = driver.find_element_by_name("q")
+		elem.clear()
 		elem.send_keys("Software Engineer")
 		elem.send_keys(Keys.RETURN)
 		assert "No results found." not in driver.page_source
@@ -23,6 +24,7 @@ class ChromeBrowserTest(unittest.TestCase):
 		driver.get("https://www.indeed.com/")
 		driver.delete_all_cookies()
 		location_element = driver.find_element_by_name("l")
+		location_element.clear()
 		location_element.send_keys("Santa Fe")
 		location_element.send_keys(Keys.RETURN)
 		assert "No results found." not in driver.page_source
