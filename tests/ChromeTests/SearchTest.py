@@ -3,12 +3,13 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
 
-class ChromeBrowserTest(unittest.TestCase):
+class MainSearchBarTest(unittest.TestCase):
 
 	# Open the browser 
 	def setUp(self):
 		self.driver = webdriver.Chrome("/Users/harrisonk1/Downloads/chromedriver")
 
+	# Get the browser and search for a particular job in input tag: q	
 	def testJobSearch(self):
 		driver = self.driver
 		driver.get("https://www.indeed.com/")
@@ -19,6 +20,7 @@ class ChromeBrowserTest(unittest.TestCase):
 		elem.send_keys(Keys.RETURN)
 		assert "No results found." not in driver.page_source
 	
+	# Get the browser and search for location in input tag: l 
 	def testLocationSearch(self):
 		driver = self.driver
 		driver.get("https://www.indeed.com/")
@@ -29,6 +31,7 @@ class ChromeBrowserTest(unittest.TestCase):
 		location_element.send_keys(Keys.RETURN)
 		assert "No results found." not in driver.page_source
 
+	# Close the browser after six seconds 	
 	def tearDown(self):
 		time.sleep(6)
 		self.driver.close()

@@ -9,9 +9,9 @@ class LinksTest(unittest.TestCase):
 
 	def testMainPage(self):
 		driver = self.driver 
-		driver.get("https://www.youtube.com")
+		driver.get("https://www.Indeed.com")		
 		
-	def closeBrowser(self):
+	def tearDown(self):
 		time.sleep(5)
 		self.driver.close()	 
 

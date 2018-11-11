@@ -3,7 +3,7 @@ import unittest
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys
 
-class ChromeBrowserTest(unittest.TestCase):
+class MainSearchBarTest(unittest.TestCase):
 
 	# Open the browser 
 	def setUp(self):
