@@ -6,14 +6,22 @@ from selenium.webdriver.common.keys import Keys
 
 class MainPageLinkTest(unittest.TestCase):
 
+	# Open the chrome browser 
 	def setUp(self):
 		self.driver = webdriver.Chrome("/Users/harrisonk1/Downloads/chromedriver")
 
-	def testJobSearch(self):
+	# Search through the recommended jobs links
+	def testRecentSearchLinks(self):
 		driver = self.driver
 		driver.get("https://www.indeed.com/")
 		driver.findElement(By.linkText("data tester - Seattle, WA")).click()
-		# recent_search_link = driver.find_element_by_link_text("data tester - Seattle, WA")
+		driver.navigate().back()
+		driver.findElement(By.linkText("qa tester - Seattle, WA")).click()
+		driver.navigate().back()
+		driver.findElement(By.linkText("etl tester - Seattle, WA")).click()
+		driver.navigate().back()
+		driver.findElement(By.linkText("software engineer - Seattle, WA")).click()
+		driver.navigate().back()
 
 	# Close the browser after six seconds 	
 	def tearDown(self):
